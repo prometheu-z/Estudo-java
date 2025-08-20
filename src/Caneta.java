@@ -1,14 +1,15 @@
 public class Caneta {
     public String modelo;
-    public String cor;
     private float ponta;
-    protected int carga;
-    private boolean tampada = false;
+    private String cor;
+    private  boolean tampada;
 
+    public Caneta(String m, String c, float p){ //O metodo contrutor
 
-    public Caneta(String modelo, String cor, float ponta) {
-        this.carga = 100;
-        this.tampada = true;
+        this.tampar();
+        this.setCor(c);
+        this.setModelo(m);
+        this.setPonta(p);
     }
 
     public String getModelo() {
@@ -19,14 +20,6 @@ public class Caneta {
         this.modelo = modelo;
     }
 
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
     public float getPonta() {
         return ponta;
     }
@@ -35,12 +28,12 @@ public class Caneta {
         this.ponta = ponta;
     }
 
-    public int getCarga() {
-        return carga;
+    public String getCor() {
+        return cor;
     }
 
-    public void setCarga(int carga) {
-        this.carga = carga;
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 
     public boolean isTampada() {
@@ -51,27 +44,18 @@ public class Caneta {
         this.tampada = tampada;
     }
 
-    void status(){
-        System.out.println("uma caneta de cor "+getCor());
-        System.out.println("modelo: "+ getModelo());
-        System.out.println("ponta "+ getPonta());
-        System.out.println("carga "+ getCarga());
-        System.out.println("está tampada? "+isTampada());
-    }
-
     public void tampar(){
-        setTampada(true);
+        this.tampada = true;
     }
     public void destampar(){
-        setTampada(false);
+        this.tampada = false;
     }
-    public  void rabiscar(){
-        if(!isTampada()){
-        System.out.println("Estou rabiscando");
-        }
-        else {
-            System.out.println("Estou tampada");
-        }
 
+
+    public void status(){
+        System.out.println("Modelo: "+this.modelo);
+        System.out.println("Ponta: "+this.ponta);
+        System.out.println("Cor: "+this.cor);
+        System.out.println("Tampada: "+this.tampada);
     }
 }
