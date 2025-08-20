@@ -58,30 +58,33 @@ public class ContaCorrente {
     //Metodos de ação
 
     public void abrirConta(String dono, String tipo, int numConta){
-        this.status = true;
+        setStatus(true);
         if(tipo.equals("Cc")){
-            this.saldo += 50;
+            setSaldo(getSaldo()+50);
+
         }
         else if (tipo.equals("Cp")){
-            this.saldo += 150;
+            setSaldo(getSaldo()+150);
         }
         else {
-            this.status = false;
+            setStatus(false);
         }
-        this.numConta = numConta;
+        setTipo(tipo);
+        setDono(dono);
+        setNumConta(numConta);
     }
     public void fecharConta(){
-        if(this.status){
-            if(this.saldo >0){
-                System.out.println("Ainda há o saldo de R$:" + this.saldo);
+        if(isStatus()){
+            if(getSaldo() >0){
+                System.out.println("Não posso fechar a conta, ainda há o saldo de R$:" + getSaldo());
             }
-            else if(this.saldo < 0){
-                System.out.println("Você está om um debito de R$:"+ this.saldo);
+            else if(getSaldo() < 0){
+                System.out.println("Não posso fechar a conta, você está com um debito de R$:"+ getSaldo());
 
             }
             else {
                 System.out.println("Conta fechada");
-                this.status = false;
+                setStatus(false);
             }
         }
         else {
@@ -89,27 +92,38 @@ public class ContaCorrente {
         }
     }
     public void depositar(float valor){
-        if(this.status){
-            this.saldo += valor;
+        if(isStatus()){
+            setSaldo(getSaldo()+valor);
         }
     }
     public void sacar(float valor){
-        if(this.status && this.saldo>=valor){
-            this.saldo -= valor;
+        if(isStatus() && getSaldo()>=valor){
+            setSaldo(getSaldo()-valor);
+        }
+        else{
+            System.out.println("Saldo de R$"+getSaldo()+" Insuficiente para saque de R$"+valor);
         }
     }
     public void pagMensal(){
         int mensalidade = 0;
 
-        if(this.tipo.equals("Cc")){
+        if(getTipo().equals("Cc")){
             mensalidade = 12;
         }
-        else if(this.tipo.equals("Cp")){
+        else if(getTipo().equals("Cp")){
             mensalidade = 20;
         }
-        if(this.status){
-            this.saldo -= mensalidade;
+        if(isStatus()){
+            setSaldo(getSaldo()-mensalidade);
         }
+    }
+    public void status(){
+        System.out.println("Numero: "+getNumConta());
+        System.out.println("Tipo: "+getTipo());
+        System.out.println("Dono: "+getDono());
+        System.out.println("Status: "+isStatus());
+        System.out.println("Saldo: "+getSaldo());
+
     }
 
 
