@@ -53,15 +53,15 @@ public class Lutador implements Partida{
         return categoria;
     }
 
-    public void setCategoria(float peso) {
+    public void setCategoria() {
         String categoria ="";
-        if(peso<52.2){
+        if(this.peso<52.2){
             categoria = "Inválida";
         }
-        else if(peso<=70.3){
+        else if(this.peso<=70.3){
             categoria= "Leve";
         }
-        else if(peso<=83.9){
+        else if(this.peso<=83.9){
             categoria = "Médio";
         }
         else{
@@ -75,8 +75,8 @@ public class Lutador implements Partida{
     }
 
     public void setPeso(float peso) {
-        this.altura = peso;
-        setCategoria(peso);
+        this.peso = peso;
+        setCategoria();
     }
     public float getAltura() {
         return altura;
@@ -114,7 +114,7 @@ public class Lutador implements Partida{
 
     @Override
     public void apresentar() {
-    System.out.println("Diretamente de(o) "+getNacionalidade()+" na categoria "+getCategoria()+", pesando "+getPeso()+"Kg com "+getAltura()+"metros e apenas "+getIdade()+" anos...\n"+getNome()+String.valueOf((getNome().replace(" ", "")).charAt((getNome().replace(" ", "")).length()-1)).repeat(5));
+    System.out.println("Diretamente de(o) "+getNacionalidade()+" na categoria "+getCategoria()+"\npesando "+getPeso()+"Kg com "+getAltura()+" metros e apenas "+getIdade()+" anos...\n"+getNome()+String.valueOf((getNome().replace(" ", "")).charAt((getNome().replace(" ", "")).length()-1)).repeat(5));
 
     }
 

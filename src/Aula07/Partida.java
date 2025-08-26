@@ -7,8 +7,5 @@ public interface Partida {
     void perderLuta();
     void empatarLuta();
 
-    void desafiado();
-    void desafiante();
-    void rounds();
-    void aprovada();
+
 }
