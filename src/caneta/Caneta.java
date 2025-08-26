@@ -1,3 +1,5 @@
+package caneta;
+
 public class Caneta {
     public String modelo;
     private float ponta;

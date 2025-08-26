@@ -1,3 +1,5 @@
+package banco;
+
 public class ContaCorrente {
     public int numConta;
     protected String tipo;

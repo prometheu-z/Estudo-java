@@ -1,3 +1,5 @@
+package aula06;
+
 public interface Controlador {
     void ligar();
     void  desligar();
