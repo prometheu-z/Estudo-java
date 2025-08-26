@@ -9,8 +9,8 @@ public class ContaCorrente {
     //Metodo construtor
 
     public ContaCorrente() {
-        this.saldo = 0f;
-        this.status = false;
+        setSaldo(0f);
+        setStatus(false);
 
     }
 
@@ -55,21 +55,22 @@ public class ContaCorrente {
         this.numConta = numConta;
     }
 
-    //Metodos de ação
+    //Metodos personalizados
 
     public void abrirConta(String dono, String tipo, int numConta){
         setStatus(true);
         if(tipo.equals("Cc")){
             setSaldo(getSaldo()+50);
-
+            setTipo(tipo);
         }
         else if (tipo.equals("Cp")){
             setSaldo(getSaldo()+150);
+            setTipo(tipo);
         }
         else {
             setStatus(false);
         }
-        setTipo(tipo);
+
         setDono(dono);
         setNumConta(numConta);
     }
