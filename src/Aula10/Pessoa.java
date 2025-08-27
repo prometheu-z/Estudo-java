@@ -1,12 +1,12 @@
 package Aula10;
 
-public class Pessoa {
+public abstract class Pessoa {
 
     private String nome;
     private int idade;
     private String sexo;
 
-    public void fazerAniversario(){
+    public final void fazerAniversario(){
         setIdade(getIdade()+1);
     }
 
