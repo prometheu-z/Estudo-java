@@ -41,13 +41,13 @@ public class Main {
         Canguru c = new Canguru();
         Cachorro k = new Cachorro();
 
-        c.setPeso(55f);
-        c.setIdade(3);
-        c.setMembro(4);
-        c.locomover();
-        c.alimentar();
-        c.emitirSom();
-        c.usarBolsa();
+//        c.setPeso(55f);
+//        c.setIdade(3);
+//        c.setMembro(4);
+//        c.locomover();
+//        c.alimentar();
+//        c.emitirSom();
+//        c.usarBolsa();
 
         k.setPeso(3f);
         k.setIdade(5);
@@ -56,6 +56,15 @@ public class Main {
         k.alimentar();
         k.emitirSom();
         k.abanarRabo();
+
+        k.reagir("Olá");
+        k.reagir("bater");
+        k.reagir(11);
+        k.reagir(19);
+        k.reagir(true);
+        k.reagir(false);
+        k.reagir(2,12);
+        k.reagir(18, 4.9f);
 
 
 
